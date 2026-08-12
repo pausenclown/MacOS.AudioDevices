@@ -1,6 +1,6 @@
 {
   "name": "MacOS::AudioDevices",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "NativeCall wrapper around macOS CoreAudio for listing and switching audio devices",
   "auth": "zef:pausenclown",
   "api": "1",
