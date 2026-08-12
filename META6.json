@@ -2,7 +2,7 @@
   "name": "MacOS::AudioDevices",
   "version": "0.1.0",
   "description": "NativeCall wrapper around macOS CoreAudio for listing and switching audio devices",
-  "auth": "zef:holli",
+  "auth": "zef:pausenclown",
   "api": "1",
   "license": "GPL-3.0-or-later",
   "raku": "6.d",

@@ -435,17 +435,30 @@ method active-output-device( --> Hash )
 multi method set-output-device( Str:D $name --> Bool )
 {
     my uint32 $device-id = device-id-by-name($name);
-
     self.set-output-device( $device-id )
-
 }
 
 multi method set-output-device( Int:D $device-id --> Bool )
 {
-    my $address =
-        property-address(
-            kAudioHardwarePropertyDefaultOutputDevice
-        );
+    set-device( $device-id, kAudioHardwarePropertyDefaultOutputDevice )  ;
+}
+
+multi method set-input-device( Str:D $name --> Bool )
+{
+    my uint32 $device-id = device-id-by-name($name);
+    self.set-input-device( $device-id )
+}
+
+multi method set-input-device( Int:D $device-id --> Bool )
+{
+    set-device( $device-id, kAudioHardwarePropertyDefaultInputDevice )  ;
+}
+
+sub set-device( Int:D $device-id, $io)
+{
+    my Str $channel = $io ~~ kAudioHardwarePropertyDefaultInputDevice ?? 'input' !! 'output';
+    
+    my $address = property-address( $io );
 
     my $value = CArray[uint32].new;
     $value[0] = $device-id;
@@ -461,8 +474,10 @@ multi method set-output-device( Int:D $device-id --> Bool )
 
     check-status(
         $status,
-        "Switching audio output to '$device-id'"
+        "Switching audio $io to '$device-id'"
     );
 
     True;
+
+
 }
