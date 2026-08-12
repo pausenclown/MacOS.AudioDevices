@@ -1,0 +1,27 @@
+{
+  "name": "MacOS::AudioDevices",
+  "version": "0.1.0",
+  "description": "NativeCall wrapper around macOS CoreAudio for listing and switching audio devices",
+  "auth": "zef:holli",
+  "api": "1",
+  "license": "GPL-3.0-or-later",
+  "raku": "6.d",
+  "source-url": "https://github.com/holli/MacOS.AudioDevices",
+  "support": {
+    "source": "https://github.com/holli/MacOS.AudioDevices",
+    "issues": "https://github.com/holli/MacOS.AudioDevices/issues"
+  },
+  "provides": {
+    "MacOS::AudioDevices": "lib/MacOS/AudioDevices.rakumod"
+  },
+  "depends": [],
+  "test-depends": [
+    "Test"
+  ],
+  "resources": [],
+  "tags": [
+    "macos",
+    "coreaudio",
+    "audio"
+  ]
+}

@@ -1,0 +1,7 @@
+0.1.0 2026-08-12
+- Initial release.
+- Added CoreAudio NativeCall wrapper for listing devices.
+- Added input/output/duplex filtering helpers.
+- Added active input/output lookup helpers.
+- Added default output switching by id or name.
+- Added distribution metadata, CI workflow, and tests.

@@ -1,7 +1,9 @@
 # Gitignore for Raku (https://raku.org)
-# As part of https://github.com/github/gitignore
 
-# precompiled files
-.precomp
-lib/.precomp
+*.code-workspace
 
+#Ignore MacOS' Blessings
+.DS_Store
+
+# Ignore local Raku precomp cache.
+.precomp/

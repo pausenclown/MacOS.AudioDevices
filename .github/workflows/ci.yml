@@ -1,0 +1,22 @@
+name: CI
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Rakudo
+        uses: Raku/setup-raku@v1
+        with:
+          raku-version: "latest"
+
+      - name: Run distribution tests
+        run: raku -Ilib t/00-load.t && raku -Ilib t/01-public-api.t
